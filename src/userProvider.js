@@ -39,7 +39,7 @@ const UsersProvider = ({ children }) => {
             return u;
           }),
         };
-      case "reset":
+      case "delete":
         return {
           keys: "",
         };

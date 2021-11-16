@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useUsers } from "./userprovider";
+import { useUsers } from "./userProvider";
 
 function AddUser() {
   const history = useHistory();

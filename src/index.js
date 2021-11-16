@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import {
@@ -11,7 +11,7 @@ import AddUser from "./AddUser";
 import DeleteUser from "./DeleteUser";
 import EditUser from "./EditUser";
 import ViewUsers from "./ViewUser";
-import UsersProvider from "./userProvider.js";
+import { UsersProvider } from "./userProvider.js";
 
 const App = () => {
   return (

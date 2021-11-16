@@ -1,6 +1,6 @@
 import "./index.css";
 import { Link } from "react-router-dom";
-import { useUsers } from "./userprovider";
+import { useUsers } from "./userProvider";
 
 function ViewUsers() {
   const { users } = useUsers();
