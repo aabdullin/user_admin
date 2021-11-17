@@ -15,7 +15,7 @@ function ViewUsers() {
         {users.map((u, i) => {
           return (
             <li key={i}>
-              {u.email} <Link to={`/edit/${u.id}`}>Edit</Link>{" "}
+              {u.id}) {u.name} {u.email} <Link to={`/edit/${u.id}`}>Edit</Link>{" "}
               <Link to={`/delete/${u.id}`}>Delete</Link>{" "}
             </li>
           );

@@ -17,10 +17,9 @@ const useUsers = () => {
 
 const UsersProvider = ({ children }) => {
   function usersReducer(state, action) {
-    // console.log(state);
+    //     console.log(state);
     // console.log(action);
     console.log(state.users);
-
     switch (action.type) {
       case "add":
         return {

@@ -1,24 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./index.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useUsers } from "./userProvider";
 
 function DeleteUser() {
   const history = useHistory();
-  const { deleteUser } = useUsers();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { id } = useParams();
+  const { users, deleteUser } = useUsers();
 
-  return ( 
-    <input
+  useEffect(() => {
+    const currentUser = users.find((u) => u.id === Number(id));
+    if (!currentUser) {
+      history.push("/");
+      return;
+    }
+  }, []);
+
+  return (
+    <button
       type="delete"
       value="Delete"
       onClick={() => {
         deleteUser({
-          name,
-          email,
-          password,
+          id: Number(id),
         });
         history.push("/");
       }}

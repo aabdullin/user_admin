@@ -3,3 +3,9 @@
   flex-direction: column;
   margin: 5px;
 }
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}

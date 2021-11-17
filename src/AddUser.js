@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useUsers } from "./userProvider";
+import "./index.css";
 
 function AddUser() {
   const history = useHistory();
@@ -9,8 +10,8 @@ function AddUser() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <div className=".form">
-      <label>
+    <div>
+      <label className="inputs">
         Name:
         <input
           type="text"

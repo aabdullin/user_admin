@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { useUsers } from "./userProvider";
+import "./index.css";
 
 function EditUser() {
   const history = useHistory();
@@ -23,8 +24,8 @@ function EditUser() {
   }, []);
 
   return (
-    <div className=".form">
-      <label>
+    <div className="form">
+      <label className="inputs">
         Name:
         <input
           type="text"
