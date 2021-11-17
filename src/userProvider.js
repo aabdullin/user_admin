@@ -4,6 +4,7 @@ const UsersContext = createContext({
   users: [],
   addUser: () => {},
   editUser: () => {},
+  deleteUser: () => {},
 });
 
 const useUsers = () => {
@@ -42,11 +43,7 @@ const UsersProvider = ({ children }) => {
         };
       case "delete":
         return {
-          users: state.users.filter((u) => {
-            if (u.id === action.user.id) {
-            }
-            return u;
-          }),
+          users: state.users.filter((u) => u.id !== action.user.id),
         };
       default:
         throw new Error();
