@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/edit/:id">
           <EditUser />
         </Route>
-        <Route path="/delete/{id}">
+        <Route path="/delete/:id">
           <DeleteUser />
         </Route>
       </Switch>

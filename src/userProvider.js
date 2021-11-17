@@ -16,8 +16,10 @@ const useUsers = () => {
 
 const UsersProvider = ({ children }) => {
   function usersReducer(state, action) {
-    console.log(state);
-    console.log(action);
+    // console.log(state);
+    // console.log(action);
+    console.log(state.users);
+
     switch (action.type) {
       case "add":
         return {
@@ -35,13 +37,16 @@ const UsersProvider = ({ children }) => {
             if (u.id === action.user.id) {
               return action.user;
             }
-
             return u;
           }),
         };
       case "delete":
         return {
-          keys: "",
+          users: state.users.filter((u) => {
+            if (u.id === action.user.id) {
+            }
+            return u;
+          }),
         };
       default:
         throw new Error();
@@ -57,12 +62,17 @@ const UsersProvider = ({ children }) => {
     usersDispatch({ type: "edit", user });
   };
 
+  const deleteUser = (user) => {
+    usersDispatch({ type: "delete", user });
+  };
+
   return (
     <UsersContext.Provider
       value={{
         users: [...usersState.users],
         addUser,
         editUser,
+        deleteUser,
       }}
     >
       {children}

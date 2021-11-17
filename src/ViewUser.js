@@ -16,6 +16,7 @@ function ViewUsers() {
           return (
             <li key={i}>
               {u.email} <Link to={`/edit/${u.id}`}>Edit</Link>{" "}
+              <Link to={`/delete/${u.id}`}>Delete</Link>{" "}
             </li>
           );
         })}
